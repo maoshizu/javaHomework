@@ -12,12 +12,12 @@ public class UserServiceImpl implements UserService {
     @Resource
     private UserDao userDao;
     @Override
-    public User loginService(String username, int password) {
+    public User loginService(int username, String password) {
         // 如果账号密码都对则返回登录的用户对象，若有一个错误则返回null
         User user = userDao.findByUsernameAndPassword(username, password);
         // 重要信息置空
         if(user != null){
-            user.setPassword(' ');
+            user.setPassword(" ");
         }
         return user;
     }
@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
             //返回创建好的用户对象(带uid)
             User newUser = userDao.save(user);
             if(newUser != null){
-                newUser.setPassword(' ');
+                newUser.setPassword(" ");
             }
             return newUser;
         }

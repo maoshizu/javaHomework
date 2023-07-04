@@ -13,7 +13,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/login")//处理post请求，路由为/user/login
-    public Result<User> loginController(@RequestParam String username, @RequestParam int password){
+    public Result<User> loginController(@RequestParam int username, @RequestParam String password){
         User user = userService.loginService(username, password);
         if(user!=null){
             return Result.success(user,"登录成功！");

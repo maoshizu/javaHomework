@@ -12,7 +12,7 @@ public interface UserService {
      * @return
      */
     //以下的方法在UserServiceImpl中实现
-    User loginService(String username, int password);
+    User loginService(int username, String password);
 
     /**
      * 注册业务逻辑
