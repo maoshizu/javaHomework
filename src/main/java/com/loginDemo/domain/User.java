@@ -13,6 +13,8 @@ public class User {
     //@GeneratedValue(generator = "username")//添加第4处
     private int username;
 
+    private String uname;
+
     private String password;
 
     private int user_status;
@@ -69,5 +71,13 @@ public class User {
 
     public void setClass_id(int class_id) {
         this.class_id = class_id;
+    }
+
+    public String getUname() {
+        return uname;
+    }
+
+    public void setUname(String uname) {
+        this.uname = uname;
     }
 }
